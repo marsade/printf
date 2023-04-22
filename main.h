@@ -10,5 +10,7 @@ typedef struct format
 	char *id;
 	int (*f)();
 }conversion;
+int _print_c(va_list ap);
+int _print_s(va_list ap);
 int _strlen(char *s);
 #endif
