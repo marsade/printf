@@ -41,10 +41,3 @@ int _printf(const char *format, ...)
   		va_end(args);
   		return len;
 }
-int main(void)
-{
-	int len;
-	len = _printf("Let's try to printf a simple sentence.\n");
-	printf("Length:[%d, %i]\n", len, len);
-	return (0);
-}
