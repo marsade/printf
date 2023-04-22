@@ -15,3 +15,20 @@ int _strlen(char *s)
 	}
 	return (count);
 }
+
+/**
+ * _strlenc - returns the length of the string constant
+ * @s: the string
+ * Return: the length of the string constant
+*/
+int _strlenc(const char *s)
+{
+	int count = 0;
+
+	while (*s != '\0')
+	{
+		count++;
+		s++;
+	}
+	return (count);
+}
