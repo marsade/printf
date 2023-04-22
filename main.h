@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <stdio.h>
 int _printf(const char *format, ...);
 typedef struct format
 {
@@ -13,4 +14,5 @@ typedef struct format
 int _print_c(va_list ap);
 int _print_s(va_list ap);
 int _strlen(char *s);
+int _strlenc(const char *s);
 #endif

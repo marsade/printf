@@ -6,10 +6,10 @@
   */
 int _print_c(va_list ap)
 {
-	char *s;
+	char s;
 
 	s = va_arg(ap, int);
-	write(1, s, 1);
+	write(1, &s, 1);
 	return (1);
 }
 /**
