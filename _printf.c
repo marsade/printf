@@ -11,28 +11,35 @@ int _printf(const char *format, ...)
 		{"%s", _print_s},
 	};
 	va_list args;
-	int i, j = 0, len = 0, len2 = 0;
-	len2 = _strlenc(format);
+	int i, j = 0, len = 0;
 
 	va_start(args, format);
 
-	while (format[i] != '\0' && format != NULL)
+	va_start(args, format);
+  	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+    return (-1);
+
+	while (format[i] != '\0')
 	{
-		while (j <= 2)
+		j = sizeof(convert) / sizeof(conversion) - 1;
+		while (j >= 0) 
 		{
-			if (convert[j].id[0] == format[i] && convert[j].id[1] == format[i + 1])
+			if (convert[j].id[0] == format[i] && convert[j].id[1] == format[i + 1]) 
 			{
 				len += convert[j].f(args);
 				i = i + 2;
+				goto Here;
 			}
-			j++;
+			j--;
 		}
-		write(1, &format[i], len2);
+		write(1, &format[i], 1);;
 		len++;
 		i++;
-	}
-	va_end(args);
-	return (len);
+  	}
+
+	Here:
+  		va_end(args);
+  		return len;
 }
 int main(void)
 {
