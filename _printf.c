@@ -9,6 +9,8 @@ int _printf(const char *format, ...)
 	conversion convert[] = {
 		{"%c", _print_c},
 		{"%s", _print_s},
+		{"%d", _printf_d},
+		{"%i", _printf_i},
 	};
 	va_list args;
 	int i, j = 0, len = 0;
