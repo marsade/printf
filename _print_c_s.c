@@ -26,7 +26,7 @@ int _print_s(va_list ap)
 	len = _strlen(s);
 
 	if (s == NULL)
-		return (0);
+		s = "(null)";
 
 	write(1, s, len);
 	return (len);

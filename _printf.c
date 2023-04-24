@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-
+Here:
 	while (format[i] != '\0')
 	{
 		j = sizeof(convert) / sizeof(conversion) - 1;
@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 		i++;
 	}
 
-Here:
+
 	va_end(args);
 	return (len);
 }
