@@ -41,7 +41,7 @@ int _printf_d(va_list ap)
 }
 /**
  * _printf_i - prints an integer
- * @args: arguments passed into the function
+ * @ap: arguments passed into the function
  *
  * Return: length of argument
  */
