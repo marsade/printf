@@ -34,7 +34,7 @@ int _printf_d(va_list ap)
 		num /= 10;
 		buffer[len++] = digit + '0';
 	}
-	for (1 = 0; i < len / 2; i++)
+	for (i = 0; i < len / 2; i++)
 	{
 		temp = buffer[i];
 		buffer[i] = buffer[len - i - 1];
