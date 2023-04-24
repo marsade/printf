@@ -53,12 +53,11 @@ int _printf_d(va_list ap)
  */
 int _printf_i(va_list ap)
 {
-	int n = va_arg(ap, int);
+	int num = va_arg(ap, int);
 	int len = 0, digit;
 	int reversed_num;
 	int is_negative = 0;
 	char digit_char;
-	int num;
 
 	if (num == 0)
 	{
