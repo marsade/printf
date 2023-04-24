@@ -16,7 +16,6 @@ int _printf(const char *format, ...)
 	int i, j = 0, len = 0;
 
 	va_start(args, format);
-
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 Here:
@@ -29,7 +28,6 @@ Here:
 			i = i + 2;
 			continue;
 		}
-		
 		j = sizeof(convert) / sizeof(conversion) - 1;
 		while (j >= 0)
 		{
@@ -45,8 +43,6 @@ Here:
 		len++;
 		i++;
 	}
-
-
 	va_end(args);
 	return (len);
 }
