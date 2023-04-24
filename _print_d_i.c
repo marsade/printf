@@ -12,9 +12,7 @@ int _printf_d(va_list ap)
 	char buffer[50];
 	int len = 0;
 	int is_negative = num < 0 ? 1 : 0;
-	int copy;
-	int digit_count;
-	int digit;
+	int copy, digit_count, digit;
 
 	if (is_negative)
 	{
@@ -47,7 +45,7 @@ int _printf_d(va_list ap)
  *
  * Return: length of argument
  */
-int _printf_i(va_list args)
+int _printf_i(va_list ap)
 {
 	int n = va_arg(ap, int);
 	int num, last = n % 10, digit;
