@@ -58,7 +58,7 @@ int _printf_i(va_list ap)
 	int reversed_num;
 	int is_negative = 0;
 	char digit_char;
-
+	int num;
 
 	if (num == 0)
 	{
