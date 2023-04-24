@@ -12,7 +12,7 @@ int _printf_d(va_list ap)
 	char buffer[50];
 	int len = 0;
 	int is_negative = num < 0 ? 1 : 0;
-	int copy, digit_count, digit;
+	int copy, digit_count, digit, i;
 
 	if (is_negative)
 	{
