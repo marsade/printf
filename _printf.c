@@ -22,6 +22,14 @@ int _printf(const char *format, ...)
 Here:
 	while (format[i] != '\0')
 	{
+		if (format[i] == '%' && format[i + 1] == '%')
+		{
+			write(1, "%", 1);
+			len++;
+			i = i + 2;
+			continue;
+		}
+		
 		j = sizeof(convert) / sizeof(conversion) - 1;
 		while (j >= 0)
 		{
