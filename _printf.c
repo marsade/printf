@@ -16,15 +16,15 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 
 	va_start(args, format);
-  	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
-    return (-1);
+	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+		return (-1);
 
 	while (format[i] != '\0')
 	{
 		j = sizeof(convert) / sizeof(conversion) - 1;
-		while (j >= 0) 
+		while (j >= 0)
 		{
-			if (convert[j].id[0] == format[i] && convert[j].id[1] == format[i + 1]) 
+			if (convert[j].id[0] == format[i] && convert[j].id[1] == format[i + 1])
 			{
 				len += convert[j].f(args);
 				i = i + 2;
@@ -32,12 +32,12 @@ int _printf(const char *format, ...)
 			}
 			j--;
 		}
-		write(1, &format[i], 1);;
+		write(1, &format[i], 1);
 		len++;
 		i++;
-  	}
+	}
 
-	Here:
-  		va_end(args);
-  		return len;
+Here:
+	va_end(args);
+	return (len);
 }
