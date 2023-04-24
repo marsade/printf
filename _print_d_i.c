@@ -32,7 +32,7 @@ int _printf_d(va_list ap)
 	{
 		digit = num % 10;
 		num /= 10;
-		buffer[len++] = digit + '0';
+		buffer[len--] = digit + '0';
 	}
 
 	write(1, buffer, len);
