@@ -1,2 +1,3 @@
 .vscode/
-test.exe
+test.c
+app.exe
