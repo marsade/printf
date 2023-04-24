@@ -4,7 +4,8 @@
   * @ap: arguments passed into the function
   * Return: 1
   */
-int _print_c(va_list ap) {
+int _print_c(va_list ap) 
+{
 	char s;
 
 	s = va_arg(ap, int);
