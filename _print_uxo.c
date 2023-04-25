@@ -6,7 +6,7 @@
  */
 int _printf_u(va_list ap)
 {
-	unsigned int n = va_arg(ap, unsigned int);
+	unsigned int num = va_arg(ap, unsigned int);
 	int len = 0, digit;
 	int reversed_num;
 	int is_negative = 0;
@@ -17,14 +17,6 @@ int _printf_u(va_list ap)
 		num = 0;
 		write(1, "0", 1);
 		return (1);
-	}
-
-	if (num < 0)
-	{
-		is_negative = 1;
-		num = -num;
-		write(1, "-", 1);
-		len++;
 	}
 
 	reversed_num = 0;
