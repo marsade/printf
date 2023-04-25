@@ -51,3 +51,17 @@ int _printf_x(va_list ap)
 	write(1, buffer, len);
 	return (len);
 }
+/**
+ * _printf_o - prints unsigned octal
+ * @ap: argument
+ * Return: length of characters
+ */
+int _printf_o(va_list ap)
+{
+	unsigned int in = va_arg(ap, unsigned int);
+	char buffer[BUFFER_SIZE];
+	int len = print_number(n, buffer, 8);
+
+	write(1, buffer, len);
+	return (len);
+}
