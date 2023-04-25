@@ -69,5 +69,5 @@ int _printf_S(va_list ap)
 		}
 	}
 	return (len);
-	
+
 }
