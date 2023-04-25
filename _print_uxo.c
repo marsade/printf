@@ -58,7 +58,7 @@ int _printf_x(va_list ap)
  */
 int _printf_o(va_list ap)
 {
-	unsigned int in = va_arg(ap, unsigned int);
+	unsigned int n = va_arg(ap, unsigned int);
 	char buffer[BUFFER_SIZE];
 	int len = print_number(n, buffer, 8);
 
