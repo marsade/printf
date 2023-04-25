@@ -1,6 +1,6 @@
 #include "main.h"
 /**
-  * _print_c - prints a single char
+  * _printf_c - prints a single char
   * @ap: arguments passed into the function
   * Return: 1
   */
@@ -13,7 +13,7 @@ int _printf_c(va_list ap)
 	return (1);
 }
 /**
-  * _print_s - prints a string
+  * _printf_s - prints a string
   * @ap: arguments passed into the function
   * Return: length of string
   */
