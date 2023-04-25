@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <stdio.h>
+#define BUFFER_SIZE 1024
 int _printf(const char *format, ...);
 /**
  * struct format - match the conversion specifiers for printf
@@ -23,6 +24,8 @@ int _strlen(char *s);
 int _strlenc(const char *s);
 int _printf_d(va_list ap);
 int _printf_i(va_list ap);
+int _printf_b(va_list ap);
+int print_number(unsigned int n, char *buffer, int base);
 
 
 #endif
