@@ -25,10 +25,11 @@ int _strlenc(const char *s);
 int _printf_d(va_list ap);
 int _printf_i(va_list ap);
 int _printf_b(va_list ap);
-int print_number(unsigned int n, char *buffer, int base);
 int _printf_u(va_list ap);
 int _printf_x(va_list ap);
 int _printf_o(va_list ap);
 int _printf_X(va_list ap);
-
+int _printf_S(va_list ap);
+int hex_cast(unsigned int num); 
+int print_number(unsigned int n, char *buffer, int base);
 #endif

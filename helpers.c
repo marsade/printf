@@ -38,3 +38,37 @@ int print_number(unsigned int n, char *buffer, int base)
 	}
 	return (len);
 }
+/**
+ * hex_cast - converts non-printable characters to hexadecimal
+ * @c: character to be converted
+ * @hex: pointer to character array where c will be stored
+*/
+int hex_cast(unsigned int num)
+{
+	int i;
+	int *array;
+	int counter = 0;
+	unsigned int temp = num;
+
+	while (num / 16 != 0)
+	{
+		num /= 16;
+		counter++;
+	}
+	counter++;
+	array = malloc(counter * sizeof(int));
+
+	for (i = 0; i < counter; i++)
+	{
+		array[i] = temp % 16;
+		temp /= 16;
+	}
+	for (i = counter - 1; i >= 0; i--)
+	{
+		if (array[i] > 9)
+			array[i] = array[i] + 7;
+		write(1, &array[i], 1);
+	}
+	free(array);
+	return (counter);
+}

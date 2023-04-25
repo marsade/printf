@@ -34,3 +34,39 @@ int _printf_s(va_list ap)
 	write(1, s, len);
 	return (len);
 }
+/**
+ * _printf_S - prints exclusive string
+ * @ap: argument
+ * Return: length of string
+*/
+int _printf_S(va_list ap)
+{
+	char *s;
+	int i, len = 0;
+	int cast;
+
+	s = va_arg(ap, char *);
+	if (s == NULL)
+		s = "(null)";
+	for (i = 0; s[i] != '\0'; i++)
+	{
+		if (s[i] < 32 || s[i] >= 127)
+		{
+			write(1, "\\x", 2);
+			len = len + 2;
+			cast = s[i];
+			if (cast < 16)
+			{
+				write(1, "0", 1);
+				len++;
+			}
+			len = len + hex_cast(cast);
+		}
+		else
+		{
+			write(1, &s[i], 1);
+			len++;
+		}
+	}
+	return (len);
+}
