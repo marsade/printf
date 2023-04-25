@@ -41,7 +41,7 @@ int print_number(unsigned int n, char *buffer, int base)
 /**
  * hex_cast - converts non-printable characters to hexadecimal
  * @num: character to be converted
- * Return : counter
+ * Return: counter
 */
 int hex_cast(unsigned int num)
 {
