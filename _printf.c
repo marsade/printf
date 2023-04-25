@@ -12,6 +12,8 @@ int _printf(const char *format, ...)
 		{"%d", _printf_d},
 		{"%i", _printf_i},
 		{"%b", _printf_b},
+		{"%u", _printf_u},
+		{"%x", _printf_x},
 	};
 	va_list args;
 	int i, j = 0, len = 0;
