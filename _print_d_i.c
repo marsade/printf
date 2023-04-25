@@ -9,7 +9,7 @@
 int _printf_d(va_list ap)
 {
 	int num = va_arg(ap, int);
-	char buffer[50], temp;
+	char buffer[BUFFER_SIZE], temp;
 	int len = 0;
 	int is_negative = num < 0 ? 1 : 0;
 	int copy, digit_count, digit, i;
