@@ -7,35 +7,10 @@
 int _printf_u(va_list ap)
 {
 	unsigned int num = va_arg(ap, unsigned int);
-	int len = 0, digit;
-	int reversed_num;
-	int is_negative = 0;
-	char digit_char;
+	char buffer[BUFFER_SIZE];
+	int len = print_number(num, buffer, 10);
 
-	if (num == 0)
-	{
-		num = 0;
-		write(1, "0", 1);
-		return (1);
-	}
-
-	reversed_num = 0;
-	while (num != 0)
-	{
-		reversed_num = reversed_num * 10 + num % 10;
-		num /= 10;
-	}
-
-	while (reversed_num != 0)
-	{
-		digit = reversed_num % 10;
-		digit_char = digit + '0';
-		write(1, &digit_char, 1);
-		reversed_num /= 10;
-		len++;
-	}
-
-	return (len + is_negative);
+	write(1, buffer, len);
 }
 /**
  * _printf_x - prints unsigned hexadecimal

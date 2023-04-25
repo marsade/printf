@@ -77,5 +77,4 @@ int _printf_i(va_list ap)
 	}
 	write(1, buffer, len);
 	return (len);
-
 }
