@@ -57,42 +57,25 @@ int _printf_d(va_list ap)
  */
 int _printf_i(va_list ap)
 {
-	long int num = va_arg(ap, long int);
-	int len = 0, digit;
-	int reversed_num;
-	int is_negative = 0;
-	char digit_char;
+	long int n = va_arg(ap, long int);
+	char buffer[BUFFER_SIZE];
+	int len = 0;
 
-	if (num == 0)
+	if (n == 0)
 	{
-		num = 0;
-		write(1, "0", 1);
-		return (1);
+		buffer[len++] = '0';
 	}
-
-	if (num < 0)
+	else
 	{
-		is_negative = 1;
-		num = -num;
-		write(1, "-", 1);
-		len++;
+		if (n < 0)
+		{
+			n = -n;
+			write(1, "-", 1);
+		}
+		len += print_number(n, buffer + len, 10);
+		
 	}
+	write(1, buffer, len);
+	return (len);
 
-	reversed_num = 0;
-	while (num != 0)
-	{
-		reversed_num = reversed_num * 10 + num % 10;
-		num /= 10;
-	}
-
-	while (reversed_num != 0)
-	{
-		digit = reversed_num % 10;
-		digit_char = digit + '0';
-		write(1, &digit_char, 1);
-		reversed_num /= 10;
-		len++;
-	}
-
-	return (len + is_negative);
 }
