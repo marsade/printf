@@ -40,8 +40,8 @@ int print_number(unsigned int n, char *buffer, int base)
 }
 /**
  * hex_cast - converts non-printable characters to hexadecimal
- * @c: character to be converted
- * @hex: pointer to character array where c will be stored
+ * @num: character to be converted
+ * Return : counter
 */
 int hex_cast(unsigned int num)
 {
@@ -71,4 +71,5 @@ int hex_cast(unsigned int num)
 	}
 	free(array);
 	return (counter);
+
 }
