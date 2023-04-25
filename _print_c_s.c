@@ -4,7 +4,7 @@
   * @ap: arguments passed into the function
   * Return: 1
   */
-int _print_c(va_list ap)
+int _printf_c(va_list ap)
 {
 	char s;
 
@@ -17,7 +17,7 @@ int _print_c(va_list ap)
   * @ap: arguments passed into the function
   * Return: length of string
   */
-int _print_s(va_list ap)
+int _printf_s(va_list ap)
 {
 	char *s;
 	int len = 0;
