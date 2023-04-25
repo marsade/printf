@@ -8,35 +8,33 @@
  */
 int print_number(unsigned int n, char *buffer, int base)
 {
-    const char digits[] = "0123456789abcdef";
-    char *p = buffer;
+	const char digits[] = "0123456789abcdef";
+	char *p = buffer;
 	char tmp;
-    int len = 0;
-	int i = 0, j;
+	int len = 0, i = 0, j;
 
-    if (n == 0)
+	if (n == 0)
 	{
-        *p++ = '0';
-        len++;
-    }
+		*p++ = '0';
+		len++;
+	}
 	else
 	{
-        while (n != 0)
+		while (n != 0)
 		{
-            *p++ = digits[n % base];
-            n /= base;
-            len++;
-        }
-    }
+			*p++ = digits[n % base];
+			n /= base;
+			len++;
+		}
+	}
 
-    *p = '\0';
+	*p = '\0';
 
-    for (i = 0, j = len - 1; i < j; i++, j--)
+	for (i = 0, j = len - 1; i < j; i++, j--)
 	{
-        tmp = buffer[i];
-        buffer[i] = buffer[j];
-        buffer[j] = tmp;
-    }
-
-    return (len);
+		tmp = buffer[i];
+		buffer[i] = buffer[j];
+		buffer[j] = tmp;
+	}
+	return (len);
 }
