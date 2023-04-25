@@ -11,6 +11,7 @@ int _printf_u(va_list ap)
 	int len = print_number(num, buffer, 10);
 
 	write(1, buffer, len);
+	return (len);
 }
 /**
  * _printf_x - prints unsigned hexadecimal
