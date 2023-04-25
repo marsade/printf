@@ -27,6 +27,12 @@ int _printf_d(va_list ap)
 		digit_count++;
 		copy /= 10;
 	} while (copy);
+	if (num == 0)
+	{
+		num = 0;
+		write(1, "0", 1);
+		return (1);
+	}
 
 	for (i = 0; i < digit_count; i++)
 	{
@@ -40,9 +46,7 @@ int _printf_d(va_list ap)
 		buffer[i] = buffer[len - i - 1];
 		buffer[len - i - 1] = temp;
 	}
-
 	write(1, buffer, len);
-
 	return (len);
 }
 /**
@@ -61,6 +65,7 @@ int _printf_i(va_list ap)
 
 	if (num == 0)
 	{
+		num = 0;
 		write(1, "0", 1);
 		return (1);
 	}
