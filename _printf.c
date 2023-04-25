@@ -7,10 +7,11 @@
 int _printf(const char *format, ...)
 {
 	conversion convert[] = {
-		{"%c", _print_c},
-		{"%s", _print_s},
+		{"%c", _printf_c},
+		{"%s", _printf_s},
 		{"%d", _printf_d},
 		{"%i", _printf_i},
+		{"%b", _printf_b},
 	};
 	va_list args;
 	int i, j = 0, len = 0;
