@@ -23,12 +23,15 @@ int _printf_s(va_list ap)
 	int len = 0;
 
 	s = va_arg(ap, char *);
-	len = _strlen(s);
 
 	if (s == NULL)
 	{
 		s = "(null)";
-		write(1, "(null)", 5);
+		len = 6;
+	}
+	else
+	{
+		len = _strlen(s);
 	}
 
 	write(1, s, len);
