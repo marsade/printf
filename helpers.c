@@ -45,10 +45,10 @@ int print_number(unsigned int n, char *buffer, int base)
 */
 int hex_cast(unsigned int num)
 {
-	int i;
+	int i, counter = 0;
 	int *array;
-	int counter = 0;
 	unsigned int temp = num;
+	char c;
 
 	while (num / 16 != 0)
 	{
@@ -65,9 +65,11 @@ int hex_cast(unsigned int num)
 	}
 	for (i = counter - 1; i >= 0; i--)
 	{
-		if (array[i] > 9)
-			array[i] = array[i] + 7;
-		write(1, &array[i], 1);
+		if (array[i] < 10)
+			c = array[i] + '0';
+		else
+			c = array[i] - 10 + 'A';
+		write(1, &c, 1);
 	}
 	free(array);
 	return (counter);
