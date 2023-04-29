@@ -30,7 +30,6 @@ int _printf_x(va_list ap);
 int _printf_o(va_list ap);
 int _printf_X(va_list ap);
 int _printf_S(va_list ap);
-int _printf_p(va_list ap);
 int hex_cast(unsigned int num);
 int print_number(unsigned int n, char *buffer, int base);
 #endif
